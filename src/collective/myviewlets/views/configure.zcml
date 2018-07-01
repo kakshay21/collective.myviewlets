@@ -2,16 +2,34 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.myviewlets">
+    i18n_domain="collective.todo">
 
   -*- extra stuff goes here -*-
 
-    <browser:page
-       name="my-view"
-       for="*"
-       template="my_view.pt"
-       permission="zope2.View"
-       />
-       
+  <browser:page
+     name="my-view"
+     for="*"
+     template="my_view.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="days_to_conference"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+     layer="*"
+     class=".first_viewlet.DaysToConferenceViewlet"
+     template="first_viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="message"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+     layer="*"
+     class=".second_viewlet.MessageViewlet"
+     permission="zope2.View"
+     />
 
 </configure>
