@@ -8,12 +8,11 @@
     <metal:block fill-slot="content-core">
         <li class="heading" i18n:translate="">
           Sample View
-          <tal:comment replace="nothing">
-            <!-- Render our precious viewlet manager -->
-          </tal:comment>
-          <tal:render-manager replace="structure provider:collective.myviewlets.viewlets.MyViewletManager" />
         </li>
+      <tal:comment replace="nothing">
+        <!-- Render our precious viewlet manager -->
+      </tal:comment>
+      <tal:render-manager replace="structure provider:collective.myviewlets.viewlets.manager.MyViewletManager" />
     </metal:block>
-
 <body>
 </html>
