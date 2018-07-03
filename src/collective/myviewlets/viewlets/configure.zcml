@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.todo">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewletManager
+    name="collective.myviewlets.viewlets.manager.MyViewletManager"
+    provides=".manager.MyViewletManager"
+    class="plone.app.viewletmanager.manager.OrderedViewletManager"
+    layer="collective.myviewlets.interfaces.ICollectiveMyviewletsLayer"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+     name="days_to_conference"
+     for="*"
+     manager="collective.myviewlets.viewlets.manager.MyViewletManager"
+     layer="collective.myviewlets.interfaces.ICollectiveMyviewletsLayer"
+     class=".first_viewlet.DaysToConferenceViewlet"
+     template="first_viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="message"
+     for="*"
+     manager="collective.myviewlets.viewlets.manager.MyViewletManager"
+     layer="collective.myviewlets.interfaces.ICollectiveMyviewletsLayer"
+     class=".second_viewlet.MessageViewlet"
+     permission="zope2.View"
+     />
+
+</configure>
