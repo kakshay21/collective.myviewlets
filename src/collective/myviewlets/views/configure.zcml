@@ -13,22 +13,30 @@
      permission="zope2.View"
      />
 
+  <browser:viewletManager
+    name="collective.myviewlets.viewlets.MyViewletManager"
+    provides=".viewlets.manager.MyViewletManager"
+    class="plone.app.viewletmanager.manager.OrderedViewletManager"
+    layer="*"
+    permission="zope2.View"
+    />
+
   <browser:viewlet
      name="days_to_conference"
      for="*"
-     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+     manager="collective.myviewlets.views.viewlets.manager.MyViewletManager"
      layer="*"
-     class=".first_viewlet.DaysToConferenceViewlet"
-     template="first_viewlet.pt"
+     class=".viewlets.first_viewlet.DaysToConferenceViewlet"
+     template="viewlets/first_viewlet.pt"
      permission="zope2.View"
      />
 
   <browser:viewlet
      name="message"
      for="*"
-     manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+     manager="collective.myviewlets.views.viewlets.manager.MyViewletManager"
      layer="*"
-     class=".second_viewlet.MessageViewlet"
+     class=".viewlets.second_viewlet.MessageViewlet"
      permission="zope2.View"
      />
 
